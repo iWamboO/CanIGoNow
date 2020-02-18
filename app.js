@@ -3,16 +3,31 @@ var app = new Vue({
     `
     <div>
  
-        <p>How long do you wanna work?</p>
-        <input type="number" v-model="worktimeValueInputHours" min="0" max="10">
-        <input type="number" v-model="worktimeValueInputMinutes" min="0" max="60">
-        <p>Timestamp in</p>
-        <input type="number" v-model="timestampValueInputHours" min="6" max="17">
-        <input type="number" v-model="timestampValueInputMinutes" min="0" max="60">
-        <p>Lunchtime</p>
-        <input type="number" v-model="lunchtimeValueInput" min="0" max="60">
+        <div class="app-header">
+            <h1>Can I Go Now?</h1>
+        </div>
 
-        <p>{{youCanGoAt}}</p>
+        <div class="app-body">
+            
+            <div class="app-body-element">
+                <p>How long do you wanna work?</p>
+                <input type="number" v-model="worktimeValueInputHours" min="0" max="10">
+                <input type="number" v-model="worktimeValueInputMinutes" min="0" max="60">
+            </div>
+
+            <div class="app-body-element">
+                <p>Timestamp in</p>
+                <input type="number" v-model="timestampValueInputHours" min="6" max="17">
+                <input type="number" v-model="timestampValueInputMinutes" min="0" max="60">
+            </div>
+            
+            <div class="app-body-element">
+                <p>Lunchtime</p>
+                <input type="number" v-model="lunchtimeValueInput" min="0" max="60">
+            </div>
+
+            <p>{{youCanGoAt}}</p>
+        </div>
 
     </div>
     `,
