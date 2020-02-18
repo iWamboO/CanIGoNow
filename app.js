@@ -29,12 +29,11 @@ var app = new Vue({
     computed: {
         youCanGoAt(){
 
-            const worktimeTimeCalc = this.worktimeValueInputHours * 3600000 + this.worktimeValueInputMinutes * 60000
-            const timestampTimeCalc = this.timestampValueInputHours * 3600000 + this.timestampValueInputMinutes * 60000
-            const lunchtimeValueInputCalc = this.lunchtimeValueInput * 60000
+            const worktimeTimeInMilliseconds = this.worktimeValueInputHours * 3600000 + this.worktimeValueInputMinutes * 60000
+            const timestampTimeInMilliseconds = this.timestampValueInputHours * 3600000 + this.timestampValueInputMinutes * 60000
+            const lunchtimeValueInputInMilliseconds = this.lunchtimeValueInput * 60000
 
-            return new Date(worktimeTimeCalc + timestampTimeCalc + lunchtimeValueInputCalc - 3600000).toLocaleTimeString();
+            return new Date(worktimeTimeInMilliseconds + timestampTimeInMilliseconds + lunchtimeValueInputInMilliseconds - 3600000).toLocaleTimeString(navigator.language, {hour: '2-digit',minute:'2-digit'});
         }
     }
-
 }) 
