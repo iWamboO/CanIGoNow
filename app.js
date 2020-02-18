@@ -4,13 +4,13 @@ var app = new Vue({
     <div>
  
         <p>How long do you wanna work?</p>
-        <input type="number" v-model="worktimeValueInputHours">
-        <input type="number" v-model="worktimeValueInputMinutes">
+        <input type="number" v-model="worktimeValueInputHours" min="0" max="10">
+        <input type="number" v-model="worktimeValueInputMinutes" min="0" max="60">
         <p>Timestamp in</p>
-        <input type="number" v-model="timestampValueInputHours">
-        <input type="number" v-model="timestampValueInputMinutes">
+        <input type="number" v-model="timestampValueInputHours" min="6" max="17">
+        <input type="number" v-model="timestampValueInputMinutes" min="0" max="60">
         <p>Lunchtime</p>
-        <input type="number" v-model="lunchtimeValueInput">
+        <input type="number" v-model="lunchtimeValueInput" min="0" max="60">
 
         <p>{{youCanGoAt}}</p>
 
@@ -21,7 +21,7 @@ var app = new Vue({
         return {
             worktimeValueInputHours: 0,
             worktimeValueInputMinutes: 0,
-            timestampValueInputHours: 0,
+            timestampValueInputHours: 6,
             timestampValueInputMinutes: 0,
             lunchtimeValueInput: 30,
         }
@@ -33,7 +33,7 @@ var app = new Vue({
             const timestampTimeCalc = this.timestampValueInputHours * 3600000 + this.timestampValueInputMinutes * 60000
             const lunchtimeValueInputCalc = this.lunchtimeValueInput * 60000
 
-            return new Date(worktimeTimeCalc + timestampTimeCalc + lunchtimeValueInputCalc).toLocaleTimeString();
+            return new Date(worktimeTimeCalc + timestampTimeCalc + lunchtimeValueInputCalc - 3600000).toLocaleTimeString();
         }
     }
 
