@@ -6,9 +6,53 @@ body {
 .app-header {
     font-family: 'Amatic SC', cursive;
     font-size: 45px;
+    padding-left: 125px;
 }
 
 .app-body {
     font-family: 'Oswald', sans-serif;
     font-size: 25px;
 }
+
+.app-body-element {
+    height: 100px;
+}
+
+.app-body-element-description {
+    text-align: right;
+    padding-right: 10px;
+    float: left;
+    width: 300px;
+}
+
+.app-body-element-input {
+    float: left;
+    padding-left: 30px;
+
+    width: 300px;
+    height: 100px;
+
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.app-body-element-input span {
+    margin-left: -6px;
+    margin-right: -3px;
+}
+
+.app-body-element-input input {
+    font-size: 25px;
+    width: 50px;
+    font-family: 'Oswald', sans-serif;
+    background-color: rgba(0,0,0,0);
+    color: white;
+    width: 25px;
+    text-align: center;
+    margin-top: 25px;
+    border: none;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+  }
